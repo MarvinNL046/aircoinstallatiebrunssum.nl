@@ -1,4 +1,4 @@
-import { Organization, WithContext, Service, LocalBusiness, BreadcrumbList } from "schema-dts"
+import { Organization, WithContext, Service, LocalBusiness, BreadcrumbList, Article } from "schema-dts"
 
 export function generateOrganizationSchema(): WithContext<Organization> {
   return {
@@ -96,5 +96,34 @@ export function generateBreadcrumbSchema(items: { name: string; item: string }[]
       name: item.name,
       item: `https://aircoinstallatiebrunssum.nl${item.item}`,
     })),
+  }
+}
+
+export function generateArticleSchema(article: {
+  title: string;
+  description: string;
+  datePublished?: string;
+  dateModified?: string;
+  author?: string;
+}): WithContext<Article> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    datePublished: article.datePublished || new Date().toISOString(),
+    dateModified: article.dateModified || new Date().toISOString(),
+    author: {
+      "@type": "Organization",
+      name: article.author || "StayCool Airco",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "StayCool Airco",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://staycoolairco.nl/logo.png",
+      },
+    },
   }
 }

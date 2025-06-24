@@ -1,23 +1,26 @@
 import { Inter } from "next/font/google"
-import { Header } from "@/components/layout/header"
-import { Footer } from "@/components/layout/footer"
+import { HeaderOptimized } from "@/components/layout/header-optimized"
+import { FooterOptimized } from "@/components/layout/footer-optimized"
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/components/theme-provider"
+import { GoogleAnalytics } from "@/components/analytics/google-analytics"
 import "./globals.css"
 
 const inter = Inter({ 
   subsets: ["latin"],
   display: 'swap',
   preload: true,
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
 })
 
 export const metadata = {
   metadataBase: new URL('https://aircoinstallatiebrunssum.nl'),
   title: {
-    default: 'Airco Installatie Brunssum | StayCool Airco | Gratis Offerte Binnen 24 Uur ✓',
-    template: '%s | Airco Installatie Brunssum'
+    default: 'Airco Brunssum Vanaf €1.299 | Binnen 48u Geïnstalleerd | StayCool',
+    template: '%s | StayCool Airco Brunssum'
   },
-  description: 'Dé airco specialist in Limburg! ✓ Professionele installatie door StayCool Airco ✓ Erkend installateur ✓ Alle topmerken ✓ Binnen 24 uur reactie ✓ Beste prijs-kwaliteit ✓ 5 jaar garantie. Bel nu: 046 202 1430',
+  description: '✅ Professionele airco installatie in Brunssum vanaf €1.299. Binnen 48 uur geplaatst door erkend F-gassen installateur. 180+ tevreden klanten, 10 jaar garantie. Bel: 046 202 1430',
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -148,7 +151,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className="scroll-smooth antialiased"
     >
-      <head />
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body 
         className={`${inter.className} min-h-screen flex flex-col`}
         suppressHydrationWarning
@@ -160,9 +165,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex min-h-screen flex-col">
-            <Header />
+            <HeaderOptimized />
             <main id="main-content">{children}</main>
-            <Footer />
+            <FooterOptimized />
           </div>
           <Toaster position="top-center" />
         </ThemeProvider>

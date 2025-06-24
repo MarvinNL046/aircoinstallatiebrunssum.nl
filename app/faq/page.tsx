@@ -9,14 +9,27 @@ import { Breadcrumb } from "@/components/navigation/breadcrumb"
 import { CTAWithForm } from "@/components/sections/cta-with-form"
 
 export const metadata: Metadata = {
-  title: "Veelgestelde Vragen | Airco Installatie Brunssum",
-  description: "Vind antwoorden op veelgestelde vragen over airconditioning, installatie, onderhoud en meer.",
+  title: "Airco FAQ 2024 | 50+ Vragen Beantwoord | StayCool Brunssum",
+  description: "✅ Alle antwoorden over airco's: Wat kost een airco? Hoeveel stroom verbruikt het? Heb ik vergunning nodig? Direct antwoord op 50+ vragen. Bel: 046 202 1430",
+  keywords: [
+    "airco vragen",
+    "wat kost een airco",
+    "hoeveel stroom verbruikt airco",
+    "airco vergunning nodig",
+    "hoe werkt een airco",
+    "airco onderhoud hoe vaak",
+    "welke airco is het beste"
+  ],
 }
 
 const faqs = [
   {
-    question: "Wat kost een airco installatie?",
-    answer: "De kosten van een airco installatie variëren afhankelijk van verschillende factoren zoals het type systeem, het aantal units en de complexiteit van de installatie. Gemiddeld ligt de prijs tussen €1.000 en €2.500 voor een single-split systeem. Neem contact met ons op voor een exacte prijsopgave."
+    question: "Wat kost een airco?",
+    answer: "Een complete airco installatie kost gemiddeld €1.299 tot €2.500 voor een single-split systeem, inclusief montage en BTW. De exacte prijs hangt af van het vermogen (2.5 - 7 kW), het merk (budget tot premium) en de installatiecomplexiteit. Multi-split systemen beginnen vanaf €2.999. Vraag een gratis offerte aan voor een exacte prijs."
+  },
+  {
+    question: "Hoeveel kost een airco per maand aan stroom?",
+    answer: "Een moderne airco verbruikt gemiddeld €15-40 per maand bij normaal gebruik (4 uur koelen per dag). Voor verwarmen ligt dit tussen €30-80 per maand. Een airco met energielabel A+++ en een SCOP van 5.1 verbruikt ongeveer 500-1000 kWh per jaar. Dit is 60% zuiniger dan elektrische kachels."
   },
   {
     question: "Heb ik een vergunning nodig voor een airco?",

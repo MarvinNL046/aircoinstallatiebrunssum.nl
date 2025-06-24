@@ -4,8 +4,17 @@ import Link from "next/link"
 import { Card } from "@/components/ui/card"
 
 export const metadata: Metadata = {
-  title: "Verwarmen met Airco | Efficiënt en Duurzaam | StayCool Airco",
-  description: "Ontdek hoe u uw woning of bedrijf efficiënt kunt verwarmen met een airconditioning. Bespaar op energiekosten en verminder uw CO2-uitstoot.",
+  title: "Verwarmen met Airco 2024 | Bespaar 60% op Stookkosten | Complete Gids",
+  description: "✅ Verwarmen met airco bespaart tot 60% op energiekosten! Ontdek de voordelen, nadelen, kosten en tips. Inclusief rekenvoorbeeld voor uw situatie. Gratis advies: 046 202 1430",
+  keywords: [
+    "verwarmen met airco",
+    "airco verwarmen",
+    "verwarmen met airco nadelen",
+    "tips verwarmen met airco",
+    "condenswater airco bij verwarmen",
+    "kunnen alle aircos verwarmen",
+    "airco als verwarming"
+  ],
 }
 
 export default function VerwarmenMetAircoPage() {

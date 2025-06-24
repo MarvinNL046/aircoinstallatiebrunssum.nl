@@ -10,7 +10,7 @@ const features = [
     icon: AirVent,
     title: "Professionele Installatie",
     description: "Vakkundige montage door gecertificeerde monteurs met ruime ervaring.",
-    link: "/diensten/installatie",
+    link: "/diensten",
   },
   {
     icon: ThermometerSun,
@@ -21,8 +21,8 @@ const features = [
   {
     icon: Wrench,
     title: "Onderhoud & Service",
-    description: "Regelmatig onderhoud en 24/7 service bij storingen.",
-    link: "/diensten/onderhoud",
+    description: "Regelmatig onderhoud en snelle service bij storingen.",
+    link: "/diensten",
   },
   {
     icon: Clock,

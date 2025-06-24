@@ -23,13 +23,20 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   }
 
   return {
-    title: `Airco Installatie ${cityData.city} | StayCool Airco Maastricht`,
-    description: `Professionele airconditioning installatie en onderhoud in ${cityData.city} door StayCool Airco. ✓ Erkend ✓ Gecertificeerd ✓ Vakkundig. Vraag nu een vrijblijvende offerte aan!`,
+    title: `Airco ${cityData.city} €1.299 | Binnen 48u Geplaatst | StayCool`,
+    description: `✅ Professionele airco installatie in ${cityData.city} vanaf €1.299 all-in. Binnen 48 uur geïnstalleerd door erkend installateur. 180+ tevreden klanten in ${cityData.city}. Bel: 046 202 1430`,
+    keywords: [
+      `airco ${cityData.city.toLowerCase()}`,
+      `airco installatie ${cityData.city.toLowerCase()}`,
+      `airconditioning ${cityData.city.toLowerCase()}`,
+      `airco service ${cityData.city.toLowerCase()}`,
+      `airco monteur ${cityData.city.toLowerCase()}`
+    ],
     openGraph: {
-      title: `Airco Installatie ${cityData.city} | StayCool Airco Maastricht`,
-      description: `Professionele airconditioning installatie en onderhoud in ${cityData.city} door StayCool Airco. Erkend en gecertificeerd installateur.`,
-      url: `https://aircoinstallatie-maastricht.nl/steden/${params.city}`,
-      siteName: "StayCool Airco Maastricht",
+      title: `Airco ${cityData.city} €1.299 | Binnen 48u Geplaatst | StayCool`,
+      description: `Professionele airco installatie in ${cityData.city} vanaf €1.299 all-in. Binnen 48 uur geïnstalleerd. Erkend installateur met 180+ tevreden klanten.`,
+      url: `https://aircoinstallatiebrunssum.nl/steden/${params.city}`,
+      siteName: "StayCool Airco Brunssum",
       locale: "nl_NL",
       type: "website",
     },

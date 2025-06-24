@@ -9,27 +9,35 @@ interface CTABannerProps {
 }
 
 export function CTABanner({ theme = "light" }: CTABannerProps) {
-  const bgColor = theme === "light" ? "bg-blue-50" : "bg-blue-900"
-  const textColor = theme === "light" ? "text-blue-900" : "text-white"
-  const borderColor = theme === "light" ? "border-blue-100" : "border-blue-800"
+  const bgColor = theme === "light" ? "bg-[#F3F4F6]" : "bg-[#1E40AF]"
+  const textColor = theme === "light" ? "text-gray-900" : "text-white"
 
   return (
     <div 
-      className={`${bgColor} ${borderColor} border-y py-3 transform transition-all duration-300`}
+      className={`${bgColor} py-4`}
     >
       <div className="container">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className={`${textColor} text-sm font-medium`}>
-            <span className="hidden sm:inline">❄️</span> Laat uw airco installeren in Limburg en geniet van een korting tot wel € 250,-!
+          <p className={`${textColor} text-base font-semibold flex items-center gap-2`}>
+            <span className="text-2xl">❄️</span> 
+            <span>Laat uw airco installeren in Limburg en geniet van een korting tot wel € 250,-!</span>
           </p>
-          <div className="flex flex-wrap gap-2">
-            <Button size="sm" variant="outline" asChild>
+          <div className="flex flex-wrap gap-3">
+            <Button 
+              size="default" 
+              className="bg-white text-[#F97316] hover:bg-gray-100 font-semibold shadow-md border border-gray-200"
+              asChild
+            >
               <Link href="tel:0462021430">
                 <Phone className="mr-2 h-4 w-4" />
                 Bel Direct
               </Link>
             </Button>
-            <Button size="sm" className="bg-green-600 hover:bg-green-700" asChild>
+            <Button 
+              size="default" 
+              className="bg-[#F97316] hover:bg-[#EA580C] text-white font-semibold shadow-md" 
+              asChild
+            >
               <Link href="/offerte">
                 <Calendar className="mr-2 h-4 w-4" />
                 Plan Afspraak

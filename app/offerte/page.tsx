@@ -4,8 +4,8 @@ import { PriceCalculator } from "@/components/calculators/price-calculator"
 import { ContactForm } from "@/components/contact-form"
 
 export const metadata: Metadata = {
-  title: "Offerte Aanvragen | Airco Installatie Brunssum",
-  description: "Vraag een vrijblijvende offerte aan voor uw airconditioning project. Ontvang binnen 24 uur een offerte op maat.",
+  title: "Gratis Airco Offerte Brunssum | Binnen 2 Uur Reactie | StayCool",
+  description: "✅ Vraag gratis een offerte aan voor uw airco. Binnen 2 uur reactie, vaste all-in prijzen vanaf €1.299. Geen verborgen kosten. 180+ tevreden klanten in Brunssum. Bel: 046 202 1430",
 }
 
 export default function OffertePage() {

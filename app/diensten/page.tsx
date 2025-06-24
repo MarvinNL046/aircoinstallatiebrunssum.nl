@@ -7,16 +7,16 @@ import Link from "next/link"
 import diensten from "@/data/diensten.json"
 
 export const metadata: Metadata = {
-  title: "Onze Diensten | Airco Installatie Brunssum",
-  description: "Bekijk ons complete aanbod van airconditioning diensten in Limburg. Van installatie en onderhoud tot reparatie, wij zijn uw betrouwbare partner.",
+  title: "Airco Services Brunssum | Installatie €1.299 | Onderhoud €89 | Snelle Service",
+  description: "✅ Alle airco diensten in Brunssum: Installatie vanaf €1.299 ⚡ Jaarlijks onderhoud €89 ⚡ Snelle storingsdienst ⚡ Gratis adviesgesprek. Met 4.9★ beoordeling uit 180+ reviews. Bel: 046 202 1430",
   keywords: [
-    "airco diensten",
-    "airconditioning services",
-    "airco installatie",
-    "airco onderhoud",
-    "airco reparatie",
-    "Limburg",
-    "professionele airco service"
+    "airco diensten brunssum",
+    "airco installatie brunssum",
+    "airco onderhoud brunssum",
+    "airco storing brunssum",
+    "airco service brunssum",
+    "airco reparatie brunssum",
+    "airco monteur brunssum"
   ],
 }
 

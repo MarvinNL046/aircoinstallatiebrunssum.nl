@@ -16,12 +16,26 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        orange: {
+          500: 'hsl(var(--orange-500))',
+          600: 'hsl(var(--orange-600))',
+          700: 'hsl(var(--orange-700))',
+        },
+        blue: {
+          600: 'hsl(var(--blue-600))',
+          700: 'hsl(var(--blue-700))',
+          800: 'hsl(var(--blue-800))',
+          900: 'hsl(var(--blue-900))',
+        },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
