@@ -9,12 +9,12 @@ import Link from "next/link"
 
 const headlines = [
   "Airco Installatie Brunssum",
-  "Airconditioning Specialist Limburg", 
-  "Professionele Airco Monteur",
-  "Airco Onderhoud & Reparatie",
-  "Split Airco Vanaf €1.299",
-  "Erkend Installateur F-gassen",
-  "Daikin • Mitsubishi • Samsung"
+  "Airco Specialist Limburg", 
+  "Split Airco Brunssum",
+  "Airco Service Limburg",
+  "Airco Onderhoud Limburg",
+  "Klimaatbeheersing Limburg",
+  "Daikin • Mitsubishi • Samsung • LG"
 ]
 
 export function HeroOptimized() {
@@ -34,32 +34,37 @@ export function HeroOptimized() {
   }, [])
 
   return (
-    <section className="relative min-h-[90vh] overflow-hidden">
-      {/* Background Gradient using StayCool colors */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#1E3A8A] to-gray-900" />
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Enhanced Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#111827] via-[#1E3A8A] to-[#111827]">
+        {/* Subtle pattern overlay */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }} />
+      </div>
       
       {/* Content */}
-      <div className="relative container mx-auto px-4 py-20">
+      <div className="relative container mx-auto px-4 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="text-white space-y-6">
             {/* Ribbon */}
-            <div className="inline-flex items-center gap-2 bg-[#F97316] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md">
+            <div className="inline-flex items-center gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg transition-colors duration-200">
               <Clock className="h-4 w-4" />
-              Binnen 24u reactie gegarandeerd
+              <span>Binnen 24 uur reactie gegarandeerd</span>
             </div>
 
             {/* Typewriter Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className={`inline-block transition-all duration-300 ${isTyping ? 'opacity-100' : 'opacity-0'}`}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <span className={`inline-block transition-all duration-300 ${isTyping ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
                 {headlines[currentHeadline]}
               </span>
             </h1>
 
             {/* Description */}
             <p className="text-xl text-gray-200 leading-relaxed">
-              Professionele airco installatie door gecertificeerde monteurs. 
-              Met 10 jaar garantie en de beste prijs-kwaliteit in heel Limburg.
+              Professionele <strong>airco installatie Brunssum</strong> door gecertificeerde monteurs. 
+              Specialist in <strong>airco service Limburg</strong> met uitstekende garantie.
             </p>
 
             {/* Trust Badges */}
@@ -67,21 +72,22 @@ export function HeroOptimized() {
               <div className="flex items-center gap-2">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-orange-500 text-orange-500" />
+                    <Star key={i} className="h-5 w-5 fill-[#F97316] text-[#F97316]" />
                   ))}
                 </div>
-                <span className="font-semibold">4.9/5</span>
-                <span className="text-gray-300">(180+ reviews)</span>
+                <span className="font-semibold">4.7/5</span>
+                <span className="text-gray-300">(163 Google reviews)</span>
               </div>
             </div>
 
             {/* Feature List */}
             <ul className="space-y-3">
               {[
-                "Gratis offerte & advies aan huis",
-                "Erkend F-gassen installateur",
-                "Alle topmerken (Daikin, Mitsubishi, Samsung)",
-                "10 jaar fabrieksgarantie"
+                "Gratis offerte & vakkundig advies",
+                "Gecertificeerde F-gassen monteurs",
+                "Specialist in Daikin, Mitsubishi, Samsung & LG",
+                "Uitstekende garantievoorwaarden",
+                "Onderhoud vanaf €11 per maand"
               ].map((feature, index) => (
                 <li key={index} className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-[#F97316] flex-shrink-0" />
@@ -95,7 +101,7 @@ export function HeroOptimized() {
               <Button 
                 asChild
                 size="lg"
-                className="bg-[#F97316] hover:bg-[#EA580C] text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+                className="bg-[#F97316] hover:bg-[#EA580C] text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 <Link href="tel:0462021430">
                   <Phone className="mr-2 h-5 w-5" />
@@ -106,7 +112,7 @@ export function HeroOptimized() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-6 py-3 rounded-lg transition-all duration-200"
+                className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg transition-all duration-200"
               >
                 <Link href="#offerte">
                   Gratis Offerte
@@ -118,7 +124,7 @@ export function HeroOptimized() {
 
           {/* Right Column - Form */}
           <div id="offerte">
-            <Card className="backdrop-blur-md bg-white/95 shadow-2xl border-0 p-8">
+            <Card className="backdrop-blur-md bg-white/95 shadow-2xl border-0 p-6 md:p-8 rounded-2xl">
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">

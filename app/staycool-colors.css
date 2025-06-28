@@ -1,0 +1,36 @@
+/* StayCool Brand Colors */
+:root {
+  /* Oranje - Call-to-Action & Accenten */
+  --orange-500: #F97316;
+  --orange-600: #EA580C;
+  --orange-700: #C2410C;
+
+  /* Blauw - Merkkleuren */
+  --blue-600: #2563EB;
+  --blue-700: #1D4ED8;
+  --blue-800: #1E3A8A;
+  --blue-900: #1E3A8A;
+
+  /* Grijs - Tekst & Achtergronden */
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-300: #D1D5DB;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #111827;
+
+  /* Basis */
+  --white: #FFFFFF;
+  --black: #000000;
+}
+
+/* Tailwind class overrides voor brand colors */
+.bg-staycool-orange { background-color: var(--orange-500); }
+.bg-staycool-orange-dark { background-color: var(--orange-600); }
+.bg-staycool-blue { background-color: var(--blue-600); }
+.bg-staycool-blue-dark { background-color: var(--blue-800); }
+.text-staycool-orange { color: var(--orange-500); }
+.text-staycool-blue { color: var(--blue-600); }
+.border-staycool-orange { border-color: var(--orange-500); }
+.border-staycool-blue { border-color: var(--blue-600); }

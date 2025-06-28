@@ -7,36 +7,36 @@ const services = [
   {
     icon: AirVent,
     title: "Installatie",
-    description: "Professionele installatie van alle typen airconditioning systemen. Van single-split tot VRV systemen.",
+    description: "Professionele airco installatie Brunssum en omgeving. Specialist in split airco's en multi-split systemen.",
     features: [
-      "Gratis inmeting",
-      "Binnen 48 uur geplaatst",
-      "10 jaar garantie",
-      "Alle merken"
+      "Gratis inmeting & advies",
+      "Snelle installatie",
+      "Uitstekende garantie",
+      "Daikin, Mitsubishi, Samsung, LG"
     ],
     link: "/diensten"
   },
   {
     icon: Settings,
     title: "Onderhoud",
-    description: "Regelmatig onderhoud voor optimale prestaties en langere levensduur van uw airco.",
+    description: "Airco service Limburg voor optimale prestaties. Onderhoud vanaf €11 per maand of €149 voor losse beurt.",
     features: [
-      "Jaarlijks onderhoud",
+      "Vanaf €11 per maand",
+      "Complete systeemcheck",
       "Filter reiniging",
-      "Koudemiddel check",
-      "Onderhoudscontract"
+      "Preventief onderhoud"
     ],
     link: "/diensten"
   },
   {
     icon: Wrench,
     title: "Reparatie",
-    description: "Snelle en vakkundige reparatie bij storingen. Wij werken met alle merken en typen.",
+    description: "Vakkundige reparatie door airco specialist Limburg. Ervaring met alle merken en modellen.",
     features: [
-      "Snelle service",
-      "Storing diagnose",
+      "Snelle diagnose",
+      "Professionele reparatie",
       "Originele onderdelen",
-      "Garantie op reparatie"
+      "Garantie op herstel"
     ],
     link: "/diensten"
   }
@@ -44,15 +44,16 @@ const services = [
 
 export function ServicesOptimized() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-[#F9FAFB]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Onze Diensten
+            Airco Service Limburg - Onze Diensten
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Van installatie tot onderhoud, wij zijn uw complete partner voor airconditioning in heel Limburg
+            Uw <strong>airco specialist Limburg</strong> voor installatie, onderhoud en reparatie. 
+            Actief in Brunssum, Heerlen, Sittard, Geleen en heel Zuid-Limburg.
           </p>
         </div>
 
@@ -61,7 +62,7 @@ export function ServicesOptimized() {
           {services.map((service, index) => {
             const Icon = service.icon
             return (
-              <Card key={index} className="p-8 hover:shadow-xl transition-shadow duration-300 bg-white">
+              <Card key={index} className="p-8 hover:shadow-2xl transition-all duration-300 bg-white border-0 hover:-translate-y-1">
                 <div className="flex items-center justify-center w-16 h-16 bg-[#DBEAFE] rounded-lg mb-6">
                   <Icon className="h-8 w-8 text-[#2563EB]" />
                 </div>
@@ -77,8 +78,8 @@ export function ServicesOptimized() {
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-gray-700">
-                      <span className="w-1.5 h-1.5 bg-[#F97316] rounded-full mr-3" />
-                      {feature}
+                      <span className="w-1.5 h-1.5 bg-[#F97316] rounded-full mr-3 flex-shrink-0" />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -86,7 +87,7 @@ export function ServicesOptimized() {
                 <Button 
                   asChild 
                   variant="outline"
-                  className="w-full border-[#F97316] text-[#F97316] hover:bg-[#FFF7ED] rounded-lg transition-all duration-200"
+                  className="w-full border-[#F97316] text-[#F97316] hover:bg-[#FFF7ED] hover:border-[#EA580C] hover:text-[#EA580C] font-semibold rounded-lg transition-all duration-200"
                 >
                   <Link href={service.link}>
                     Meer informatie
@@ -99,15 +100,15 @@ export function ServicesOptimized() {
         </div>
 
         {/* Video Section */}
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid md:grid-cols-2 items-center">
             <div className="p-8 md:p-12">
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Zie Ons In Actie
+                Zie Onze Airco Monteurs In Actie
               </h3>
               <p className="text-lg text-gray-600 mb-6">
-                Bekijk hoe onze gecertificeerde monteurs te werk gaan bij een professionele airco installatie. 
-                Van intake tot oplevering, wij nemen u mee in het complete proces.
+                Bekijk hoe onze gecertificeerde monteurs een <strong>airco installatie Brunssum</strong> uitvoeren. 
+                Van advies tot oplevering, wij zijn uw betrouwbare <strong>aircospecialist Limburg</strong>.
               </p>
               <Button 
                 asChild
@@ -125,14 +126,15 @@ export function ServicesOptimized() {
               </Button>
             </div>
             
-            <div className="relative h-full min-h-[300px] md:min-h-[400px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent z-10" />
+            <div className="relative h-full min-h-[300px] md:min-h-[400px] bg-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent z-10 pointer-events-none" />
               <iframe 
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/9m-jkGgfLog" 
-                title="StayCool Airco Bedrijfsvideo" 
+                title="StayCool Airco Installatie Brunssum - Bedrijfsvideo" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen
+                loading="lazy"
               />
             </div>
           </div>

@@ -1,33 +1,86 @@
-import { Organization, WithContext, Service, LocalBusiness, BreadcrumbList, Article } from "schema-dts"
+import { WithContext, Service, LocalBusiness, BreadcrumbList, Article } from "schema-dts"
 
-export function generateOrganizationSchema(): WithContext<Organization> {
+export function generateOrganizationSchema(): WithContext<LocalBusiness> {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "HVACBusiness",
+    "@id": "https://aircoinstallatiebrunssum.nl/#organization",
     name: "Airco Installatie Brunssum",
+    alternateName: "StayCool Airco Brunssum",
     url: "https://aircoinstallatiebrunssum.nl",
-    logo: "https://staycoolairco.nl/logo.png",
-    description: "Professionele airconditioning installatie in heel Limburg door StayCool Airco",
+    logo: "https://aircoinstallatiebrunssum.nl/logo.png",
+    image: "https://aircoinstallatiebrunssum.nl/og-image.png",
+    description: "Specialist in airco installatie Brunssum en heel Limburg. Erkend F-gassen installateur met 163 tevreden klanten.",
+    telephone: "+31462021430",
+    email: "info@staycoolairco.nl",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Aan de Bogen 11",
+      addressLocality: "Nieuwstadt",
+      postalCode: "6118 AS",
       addressRegion: "Limburg",
-      addressCountry: "NL",
+      addressCountry: "NL"
     },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+31-46-202-1430",
-      contactType: "customer service",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 51.0384,
+      longitude: 5.8635
     },
-    sameAs: [
-      "https://staycoolairco.nl",
-      "https://facebook.com/staycoolairco",
-      "https://instagram.com/staycoolairco",
-      "https://linkedin.com/company/staycoolairco",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        opens: "09:00",
+        closes: "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Friday",
+        opens: "09:00",
+        closes: "16:00"
+      }
     ],
-    areaServed: {
-      "@type": "State",
-      name: "Limburg",
-    }
+    priceRange: "€€",
+    paymentAccepted: ["Cash", "Credit Card", "Bank Transfer"],
+    currenciesAccepted: "EUR",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.7",
+      reviewCount: "163",
+      bestRating: "5",
+      worstRating: "1"
+    },
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Brunssum"
+      },
+      {
+        "@type": "City",
+        name: "Heerlen"
+      },
+      {
+        "@type": "City",
+        name: "Sittard"
+      },
+      {
+        "@type": "City",
+        name: "Geleen"
+      },
+      {
+        "@type": "City",
+        name: "Kerkrade"
+      },
+      {
+        "@type": "State",
+        name: "Limburg"
+      }
+    ],
+    sameAs: [
+      "https://www.facebook.com/staycoolairconditioning",
+      "https://instagram.com/staycoolairco",
+      "https://youtube.com/@staycoolairco"
+    ]
   }
 }
 

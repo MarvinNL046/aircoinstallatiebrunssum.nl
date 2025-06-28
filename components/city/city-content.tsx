@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card"
 import { MapPin, Phone, Mail, ThermometerSun } from "lucide-react"
 import Link from "next/link"
 import { ContactForm } from "@/components/contact-form"
+import { CitySeoContent } from "@/components/city/city-seo-content"
 
 interface CityContentProps {
   city: {
@@ -12,9 +13,10 @@ interface CityContentProps {
     population: number
     postal_codes: string
   }
+  nearbyAreas?: string[]
 }
 
-export function CityContent({ city }: CityContentProps) {
+export function CityContent({ city, nearbyAreas = [] }: CityContentProps) {
   return (
     <div className="container py-12">
       <div className="grid gap-6 lg:grid-cols-2">
@@ -25,7 +27,7 @@ export function CityContent({ city }: CityContentProps) {
           </div>
           
           <h1 className="text-4xl font-bold tracking-tight mb-4">
-            Airco Installatie {city.title}
+            Airco {city.title} - Specialist in {city.region}
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8">
@@ -119,6 +121,11 @@ export function CityContent({ city }: CityContentProps) {
             </div>
           </Card>
         </div>
+      </div>
+      
+      {/* SEO Content Section */}
+      <div className="mt-16">
+        <CitySeoContent city={city.title} nearbyAreas={nearbyAreas} />
       </div>
     </div>
   )

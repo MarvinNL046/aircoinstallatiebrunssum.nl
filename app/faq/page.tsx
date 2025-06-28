@@ -7,19 +7,24 @@ import {
 } from "@/components/ui/accordion"
 import { Breadcrumb } from "@/components/navigation/breadcrumb"
 import { CTAWithForm } from "@/components/sections/cta-with-form"
+import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "Airco FAQ 2024 | 50+ Vragen Beantwoord | StayCool Brunssum",
-  description: "✅ Alle antwoorden over airco's: Wat kost een airco? Hoeveel stroom verbruikt het? Heb ik vergunning nodig? Direct antwoord op 50+ vragen. Bel: 046 202 1430",
+  title: "Airco Vragen? Direct Antwoord van Specialist Brunssum | FAQ",
+  description: "Alle vragen over airco installatie Brunssum beantwoord. ✓ Kosten vanaf €11/maand ✓ Geen vergunning nodig ✓ Installatie in 1 dag. Expert advies: 046 202 1430",
   keywords: [
-    "airco vragen",
-    "wat kost een airco",
-    "hoeveel stroom verbruikt airco",
-    "airco vergunning nodig",
-    "hoe werkt een airco",
-    "airco onderhoud hoe vaak",
-    "welke airco is het beste"
+    "airco vragen brunssum",
+    "wat kost airco brunssum",
+    "airco installatie vragen",
+    "airco vergunning limburg",
+    "airco onderhoud brunssum",
+    "beste airco brunssum",
+    "airco stroomverbruik",
+    "split airco vragen"
   ],
+  alternates: {
+    canonical: 'https://aircoinstallatiebrunssum.nl/faq'
+  }
 }
 
 const faqs = [
@@ -52,10 +57,30 @@ const faqs = [
 export default function FAQPage() {
   const breadcrumbItems = [
     { label: "FAQ", href: "/faq" }
-  ];
+  ]
+
+  // Generate FAQ Schema for better SERP visibility
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
 
   return (
     <>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       <div className="container py-12">
         <Breadcrumb items={breadcrumbItems} />
         <h1 className="mb-8 text-4xl font-bold">Veelgestelde Vragen</h1>

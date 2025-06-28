@@ -4,8 +4,11 @@ import ContactForm from '@/components/forms/ContactForm';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact | Airco Installatie Brunssum',
-  description: 'Neem contact op met Airco Installatie Brunssum voor een vrijblijvende offerte of advies over airconditioning installatie en onderhoud.',
+  title: 'Contact Airco Brunssum → Direct Bellen: 046 202 1430',
+  description: 'Contact airco specialist Brunssum & Limburg. ✓ Gratis offerte binnen 24u ✓ WhatsApp: 06 3648 1054 ✓ Ma-vr 09:00-17:00. Direct advies van erkend installateur.',
+  alternates: {
+    canonical: 'https://aircoinstallatiebrunssum.nl/contact'
+  }
 };
 
 const contactInfo = [

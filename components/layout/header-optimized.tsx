@@ -36,6 +36,7 @@ export function HeaderOptimized() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const isHomePage = pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,29 +50,37 @@ export function HeaderOptimized() {
   return (
     <header 
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "fixed top-0 z-50 w-full transition-all duration-300 bg-white",
         isScrolled 
-          ? "bg-white/95 backdrop-blur-md shadow-md" 
-          : "bg-white/80 backdrop-blur-sm"
+          ? "shadow-lg border-b border-[#F3F4F6]" 
+          : "shadow-md border-b border-[#F3F4F6]"
       )}
     >
       {/* Top Bar */}
-      <div className="bg-[#F97316] text-white py-2">
+      <div className="bg-gradient-to-r from-[#F97316] to-[#EA580C] text-white py-2.5">
         <div className="container flex items-center justify-between text-sm">
           <div className="hidden md:flex items-center gap-6">
-            <span className="flex items-center gap-1">
+            <a href="tel:0462021430" className="flex items-center gap-1.5 font-medium hover:opacity-90 transition-opacity">
               <Phone className="h-3.5 w-3.5" />
-              <a href="tel:0462021430" className="font-semibold">046 202 1430</a>
+              <span>046 202 1430</span>
+            </a>
+            <span className="text-white/40">•</span>
+            <span className="flex items-center gap-1.5">
+              <span className="text-yellow-300">★★★★★</span>
+              <span className="font-medium">4.7/5</span>
+              <span className="text-white/80">(163 reviews)</span>
             </span>
-            <span className="text-white/80">|</span>
-            <span>✓ Gratis offerte</span>
-            <span className="text-white/80">|</span>
-            <span>✓ 10 jaar garantie</span>
-            <span className="text-white/80">|</span>
-            <span>✓ 4.9★ (180+ reviews)</span>
+            <span className="text-white/40">•</span>
+            <span className="text-white/90">Ma-vr: 09:00-17:00</span>
           </div>
           <div className="w-full md:w-auto text-center md:text-right">
-            <span className="font-semibold">✓ Binnen 24 uur reactie gegarandeerd!</span>
+            <span className="inline-flex items-center gap-2 font-medium">
+              <span className="flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+              </span>
+              Binnen 24 uur reactie
+            </span>
           </div>
         </div>
       </div>
@@ -80,13 +89,22 @@ export function HeaderOptimized() {
       <nav className="container">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="p-2 bg-[#F97316] rounded-lg">
-              <AirVent className="h-6 w-6 text-white" />
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#F97316] to-[#EA580C] rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative p-2.5 bg-gradient-to-br from-[#F97316] to-[#EA580C] rounded-xl shadow-lg">
+                <AirVent className="h-6 w-6 text-white" />
+              </div>
             </div>
             <div>
-              <span className="font-bold text-lg text-gray-900">StayCool Airco</span>
-              <span className="text-xs text-gray-600 block -mt-1">Brunssum & Limburg</span>
+              <span className={cn(
+                "font-bold text-lg transition-all duration-300",
+                isScrolled || !isHomePage ? "text-[#111827]" : "text-white"
+              )}>Airco Brunssum</span>
+              <span className={cn(
+                "text-xs block transition-all duration-300",
+                isScrolled || !isHomePage ? "text-[#4B5563]" : "text-white/80"
+              )}>Specialist in heel Limburg</span>
             </div>
           </Link>
 
@@ -100,7 +118,7 @@ export function HeaderOptimized() {
                       <>
                         <NavigationMenuTrigger 
                           className={cn(
-                            "bg-transparent hover:bg-transparent focus:bg-transparent",
+                            "bg-transparent hover:bg-transparent focus:bg-transparent font-semibold data-[state=open]:text-[#F97316] text-[#374151] hover:text-[#F97316]",
                             pathname === item.href && "text-[#F97316]"
                           )}
                         >
@@ -133,10 +151,10 @@ export function HeaderOptimized() {
                       <Link
                         href={item.href}
                         className={cn(
-                          "px-4 py-2 text-sm font-medium transition-colors hover:text-[#F97316]",
+                          "px-4 py-2 text-sm font-semibold transition-all duration-200",
                           pathname === item.href 
                             ? "text-[#F97316]" 
-                            : "text-gray-700"
+                            : "text-[#374151] hover:text-[#F97316]"
                         )}
                       >
                         {item.name}
@@ -152,7 +170,10 @@ export function HeaderOptimized() {
               <Button 
                 asChild
                 variant="outline"
-                className="border-[#F97316] text-[#F97316] hover:bg-[#F97316] hover:text-white"
+                className={cn(
+                  "font-semibold transition-all duration-300 border-2",
+                  "border-[#F97316] text-[#F97316] hover:bg-[#F97316] hover:text-white"
+                )}
               >
                 <Link href="/offerte">
                   Gratis Offerte
@@ -160,7 +181,7 @@ export function HeaderOptimized() {
               </Button>
               <Button 
                 asChild
-                className="bg-[#F97316] hover:bg-[#EA580C] text-white shadow-lg"
+                className="bg-gradient-to-r from-[#F97316] to-[#EA580C] hover:from-[#EA580C] hover:to-[#C2410C] text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
               >
                 <Link href="tel:0462021430">
                   <Phone className="mr-2 h-4 w-4" />
@@ -223,7 +244,7 @@ export function HeaderOptimized() {
               <div className="px-4 pt-4 space-y-3 border-t">
                 <Button 
                   asChild
-                  className="w-full bg-[#F97316] hover:bg-[#EA580C] text-white"
+                  className="w-full bg-gradient-to-r from-[#F97316] to-[#EA580C] hover:from-[#EA580C] hover:to-[#C2410C] text-white font-semibold shadow-lg"
                   size="lg"
                 >
                   <Link href="tel:0462021430">
@@ -234,7 +255,7 @@ export function HeaderOptimized() {
                 <Button 
                   asChild
                   variant="outline"
-                  className="w-full border-[#F97316] text-[#F97316]"
+                  className="w-full border-2 border-[#F97316] text-[#F97316] hover:bg-[#F97316] hover:text-white font-semibold"
                   size="lg"
                 >
                   <Link href="/offerte">

@@ -7,17 +7,22 @@ import Link from "next/link"
 import diensten from "@/data/diensten.json"
 
 export const metadata: Metadata = {
-  title: "Airco Services Brunssum | Installatie €1.299 | Onderhoud €89 | Snelle Service",
-  description: "✅ Alle airco diensten in Brunssum: Installatie vanaf €1.299 ⚡ Jaarlijks onderhoud €89 ⚡ Snelle storingsdienst ⚡ Gratis adviesgesprek. Met 4.9★ beoordeling uit 180+ reviews. Bel: 046 202 1430",
+  title: "Airco Service Limburg → Installatie, Onderhoud & Reparatie",
+  description: "Airco service Limburg door erkend specialist. ✓ Installatie met gratis advies ✓ Onderhoud vanaf €11/maand ✓ Snelle reparatie ✓ 4.7★ uit 163 reviews. Bel nu: 046 202 1430",
   keywords: [
-    "airco diensten brunssum",
+    "airco service limburg",
     "airco installatie brunssum",
-    "airco onderhoud brunssum",
-    "airco storing brunssum",
-    "airco service brunssum",
-    "airco reparatie brunssum",
-    "airco monteur brunssum"
+    "airco onderhoud limburg",
+    "airco reparatie limburg",
+    "airco service geleen",
+    "airco service sittard",
+    "airco service heerlen",
+    "airco montage limburg",
+    "airco bedrijf limburg"
   ],
+  alternates: {
+    canonical: 'https://aircoinstallatiebrunssum.nl/diensten'
+  }
 }
 
 export default function DienstenPage() {

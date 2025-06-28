@@ -23,18 +23,20 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   }
 
   return {
-    title: `Airco ${cityData.city} €1.299 | Binnen 48u Geplaatst | StayCool`,
-    description: `✅ Professionele airco installatie in ${cityData.city} vanaf €1.299 all-in. Binnen 48 uur geïnstalleerd door erkend installateur. 180+ tevreden klanten in ${cityData.city}. Bel: 046 202 1430`,
+    title: `Airco ${cityData.city} → Erkend Installateur | Direct Offerte`,
+    description: `Airco installatie ${cityData.city} door specialist met 163 tevreden klanten (4.7★). ✓ Gratis advies ✓ Vanaf €11/maand ✓ Alle merken. Bel nu: 046 202 1430`,
     keywords: [
       `airco ${cityData.city.toLowerCase()}`,
       `airco installatie ${cityData.city.toLowerCase()}`,
-      `airconditioning ${cityData.city.toLowerCase()}`,
+      `split airco ${cityData.city.toLowerCase()}`,
       `airco service ${cityData.city.toLowerCase()}`,
-      `airco monteur ${cityData.city.toLowerCase()}`
+      `airco specialist ${cityData.city.toLowerCase()}`,
+      `airco onderhoud ${cityData.city.toLowerCase()}`,
+      `klimaatbeheersing ${cityData.city.toLowerCase()}`
     ],
     openGraph: {
-      title: `Airco ${cityData.city} €1.299 | Binnen 48u Geplaatst | StayCool`,
-      description: `Professionele airco installatie in ${cityData.city} vanaf €1.299 all-in. Binnen 48 uur geïnstalleerd. Erkend installateur met 180+ tevreden klanten.`,
+      title: `Airco Installatie ${cityData.city} | Nr.1 Specialist in Limburg`,
+      description: `Dé airco specialist voor ${cityData.city} en omgeving. Gratis offerte, scherpe prijzen, vakkundige installatie. 163 Google reviews (4.7★).`,
       url: `https://aircoinstallatiebrunssum.nl/steden/${params.city}`,
       siteName: "StayCool Airco Brunssum",
       locale: "nl_NL",

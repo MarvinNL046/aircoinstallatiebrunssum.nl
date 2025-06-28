@@ -7,10 +7,11 @@ const cities = [
   "Heerlen", 
   "Kerkrade",
   "Landgraaf",
-  "Maastricht",
   "Sittard",
   "Geleen",
-  "Roermond",
+  "Voerendaal",
+  "Hoensbroek",
+  "Parkstad",
 ]
 
 const services = [
@@ -25,7 +26,7 @@ export function FooterOptimized() {
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white">
       {/* CTA Section */}
-      <div className="bg-[#F97316]">
+      <div className="bg-gradient-to-r from-[#F97316] to-[#EA580C]">
         <div className="container py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
@@ -46,7 +47,7 @@ export function FooterOptimized() {
               <Button 
                 asChild
                 size="lg"
-                className="bg-[#EA580C] text-white border-2 border-[#EA580C] hover:bg-[#DC2626] hover:border-[#DC2626] font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+                className="bg-[#EA580C] text-white border-2 border-[#EA580C] hover:bg-[#C2410C] hover:border-[#C2410C] font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
               >
                 <Link href="/offerte">
                   Offerte Aanvragen
@@ -72,8 +73,8 @@ export function FooterOptimized() {
               </div>
             </div>
             <p className="text-gray-300 mb-4">
-              Al meer dan 10 jaar dé specialist in airconditioning voor heel Limburg. 
-              Professionele installatie, onderhoud en reparatie met 10 jaar garantie.
+              Uw betrouwbare <strong>airco specialist Limburg</strong> voor installatie, onderhoud en reparatie. 
+              Gecertificeerde monteurs, uitstekende garantie en 4.7/5 sterren op basis van 163 Google reviews.
             </p>
             
             {/* Trust Badges */}
@@ -84,11 +85,11 @@ export function FooterOptimized() {
               </div>
               <div className="flex items-center gap-2 text-sm">
                 <CheckCircle className="h-5 w-5 text-[#F97316]" />
-                <span>180+ Reviews</span>
+                <span>163 Google Reviews</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
                 <CheckCircle className="h-5 w-5 text-[#F97316]" />
-                <span>4.9★ Score</span>
+                <span>4.7★ Score</span>
               </div>
             </div>
 
@@ -198,9 +199,12 @@ export function FooterOptimized() {
                   </span>
                 </span>
               </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <Clock className="h-4 w-4" />
-                <span>Ma-Za: 08:00 - 20:00</span>
+              <li className="flex items-start gap-2 text-gray-300">
+                <Clock className="h-4 w-4 mt-0.5" />
+                <span>
+                  Ma-vr: 09:00 - 17:00<br />
+                  <span className="text-xs text-gray-400">Weekend gesloten</span>
+                </span>
               </li>
             </ul>
           </div>

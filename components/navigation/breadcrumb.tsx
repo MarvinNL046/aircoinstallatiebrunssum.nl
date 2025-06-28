@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ChevronRight, Home } from "lucide-react"
+import Script from "next/script"
 
 interface BreadcrumbItem {
   label: string
@@ -11,9 +12,35 @@ interface BreadcrumbProps {
 }
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
+  // Generate BreadcrumbList schema for rich snippets
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://aircoinstallatiebrunssum.nl"
+      },
+      ...items.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 2,
+        "name": item.label,
+        "item": `https://aircoinstallatiebrunssum.nl${item.href}`
+      }))
+    ]
+  }
+
   return (
-    <nav className="flex mb-6" aria-label="Breadcrumb">
-      <ol className="inline-flex items-center space-x-1 md:space-x-3">
+    <>
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <nav className="flex mb-6" aria-label="Breadcrumb">
+        <ol className="inline-flex items-center space-x-1 md:space-x-3">
         <li className="inline-flex items-center">
           <Link
             href="/"
@@ -38,5 +65,6 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
         ))}
       </ol>
     </nav>
+    </>
   )
 }

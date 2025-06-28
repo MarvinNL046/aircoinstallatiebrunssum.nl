@@ -17,10 +17,10 @@ const inter = Inter({
 export const metadata = {
   metadataBase: new URL('https://aircoinstallatiebrunssum.nl'),
   title: {
-    default: 'Airco Brunssum Vanaf €1.299 | Binnen 48u Geïnstalleerd | StayCool',
-    template: '%s | StayCool Airco Brunssum'
+    default: 'Airco Brunssum → Nr.1 Specialist Limburg | Bel 046 202 1430',
+    template: '%s | Airco Installatie Brunssum'
   },
-  description: '✅ Professionele airco installatie in Brunssum vanaf €1.299. Binnen 48 uur geplaatst door erkend F-gassen installateur. 180+ tevreden klanten, 10 jaar garantie. Bel: 046 202 1430',
+  description: 'Airco specialist Brunssum & Limburg. ✓ Installatie vanaf €11/maand ✓ 163 tevreden klanten (4.7★) ✓ Erkend monteur ✓ Gratis offerte. Direct contact: 046 202 1430',
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -145,6 +145,27 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://aircoinstallatiebrunssum.nl#webpage",
+    "url": "https://aircoinstallatiebrunssum.nl",
+    "name": "Airco Installatie Brunssum | Nr.1 Specialist in Limburg",
+    "isPartOf": {
+      "@id": "https://aircoinstallatiebrunssum.nl#website"
+    },
+    "primaryImageOfPage": {
+      "@id": "https://aircoinstallatiebrunssum.nl#primaryimage"
+    },
+    "datePublished": "2023-01-01T00:00:00+01:00",
+    "dateModified": new Date().toISOString(),
+    "description": "Professionele airco installatie in Brunssum en heel Limburg. Erkend installateur met 163 tevreden klanten (4.7★). Gratis offerte binnen 24 uur.",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".hero-text", ".cta-button"]
+    }
+  }
+
   return (
     <html 
       lang="nl" 
@@ -153,6 +174,10 @@ export default function RootLayout({
     >
       <head>
         <GoogleAnalytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+        />
       </head>
       <body 
         className={`${inter.className} min-h-screen flex flex-col`}
@@ -166,7 +191,7 @@ export default function RootLayout({
         >
           <div className="flex min-h-screen flex-col">
             <HeaderOptimized />
-            <main id="main-content">{children}</main>
+            <main id="main-content" className="pt-[104px]">{children}</main>
             <FooterOptimized />
           </div>
           <Toaster position="top-center" />
