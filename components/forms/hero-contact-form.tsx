@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import emailjs from "@emailjs/browser"
+import { sendEmail } from "@/lib/emailjs"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -27,13 +27,6 @@ export function HeroContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const router = useRouter()
   
-  useEffect(() => {
-    // Initialize EmailJS with public key
-    if (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
-    }
-  }, [])
-  
   const {
     register,
     handleSubmit,
@@ -48,33 +41,14 @@ export function HeroContactForm() {
     setIsSubmitting(true)
     
     try {
-      // EmailJS implementation
-      const templateParams = {
-        from_name: data.name,
-        from_email: data.email,
+      // Use the enhanced sendEmail function with dual submission
+      await sendEmail({
+        name: data.name,
+        email: data.email,
         phone: data.phone,
-        postcode: data.postcode,
-        message: data.message || "Geen bericht",
-        to_name: "StayCool Airco",
-      }
-
-      // Initialize EmailJS
-      console.log("EmailJS Config:", {
-        serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        message: `Postcode: ${data.postcode}\n\n${data.message || "Geen bericht"}`,
+        city: "Brunssum" // You can extract city from postcode if needed
       })
-
-      // Send email using EmailJS
-      const response = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        templateParams
-      )
-
-      if (response.status !== 200) {
-        throw new Error("Er ging iets mis")
-      }
 
       toast.success("Offerte aanvraag verstuurd! We nemen binnen 2 uur contact met u op.")
 
