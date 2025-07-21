@@ -10,7 +10,7 @@ export const EMAILJS_SERVICE_ID = "service_1rruujp";
 export const EMAILJS_TEMPLATE_ID = "template_rkcpzhg";
 
 // GoHighLevel webhook configuration
-const WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/k90zUH3RgEQLfj7Yc55b/webhook-trigger/54670718-ea44-43a1-a81a-680ab3d5f67f";
+const WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL || "https://services.leadconnectorhq.com/hooks/k90zUH3RgEQLfj7Yc55b/webhook-trigger/54670718-ea44-43a1-a81a-680ab3d5f67f";
 
 // Debug mode for troubleshooting
 const DEBUG_MODE = false;
