@@ -17,6 +17,7 @@ const cities = [
 const services = [
   { name: "Alle Diensten", href: "/diensten" },
   { name: "Gratis Offerte", href: "/offerte" },
+  { name: "Plan Thuis Afspraak", href: "https://afspraken.staycoolairco.nl/", external: true },
   { name: "Contact", href: "/contact" },
   { name: "Veelgestelde Vragen", href: "/faq" }
 ]
@@ -131,12 +132,23 @@ export function FooterOptimized() {
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link 
-                    href={service.href}
-                    className="text-gray-300 hover:text-[#F97316] transition-colors text-sm"
-                  >
-                    {service.name}
-                  </Link>
+                  {service.external ? (
+                    <a 
+                      href={service.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-[#F97316] transition-colors text-sm"
+                    >
+                      {service.name}
+                    </a>
+                  ) : (
+                    <Link 
+                      href={service.href}
+                      className="text-gray-300 hover:text-[#F97316] transition-colors text-sm"
+                    >
+                      {service.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

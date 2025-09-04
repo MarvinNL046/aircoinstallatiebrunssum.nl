@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, MessageSquare, Calendar } from "lucide-react"
 import Link from "next/link"
 import { ContactForm } from "@/components/forms/contact-form"
 
@@ -18,6 +18,12 @@ const contactInfo = [
     title: "WhatsApp",
     details: ["06 3648 1054", "Snelle reactie", "Ook buiten kantooruren"],
     action: { href: "https://wa.me/31636481054", text: "Stuur Bericht" }
+  },
+  {
+    icon: Calendar,
+    title: "Thuis Afspraak",
+    details: ["Online planning", "Kies zelf uw tijd", "Direct bevestiging"],
+    action: { href: "https://afspraken.staycoolairco.nl/", text: "Plan Afspraak", external: true }
   },
   {
     icon: Mail,
@@ -79,9 +85,15 @@ export function ContactSection() {
                             size="sm"
                             className="mt-3 bg-[#F97316] hover:bg-[#EA580C] text-white rounded-lg"
                           >
-                            <Link href={item.action.href}>
-                              {item.action.text}
-                            </Link>
+                            {item.action.external ? (
+                              <a href={item.action.href} target="_blank" rel="noopener noreferrer">
+                                {item.action.text}
+                              </a>
+                            ) : (
+                              <Link href={item.action.href}>
+                                {item.action.text}
+                              </Link>
+                            )}
                           </Button>
                         )}
                       </div>
