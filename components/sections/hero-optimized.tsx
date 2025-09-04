@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { HeroContactForm } from "@/components/forms/hero-contact-form"
-import { Phone, Star, CheckCircle, Clock, ArrowRight } from "lucide-react"
+import { Phone, Star, CheckCircle, Clock, ArrowRight, Calendar } from "lucide-react"
 import Link from "next/link"
 
 const headlines = [
@@ -114,10 +114,10 @@ export function HeroOptimized() {
                 variant="outline"
                 className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg transition-all duration-200"
               >
-                <Link href="#offerte">
-                  Gratis Offerte
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                <a href="https://afspraken.staycoolairco.nl/" target="_blank" rel="noopener noreferrer">
+                  Plan Afspraak
+                  <Calendar className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
