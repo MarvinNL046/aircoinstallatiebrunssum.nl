@@ -65,7 +65,7 @@ export function HeroContactForm() {
 
       // Redirect to thank you page after 1.5 seconds
       setTimeout(() => {
-        router.push('/bedankt')
+        window.location.href = 'https://staycoolairco.nl/tot-snel';
       }, 1500)
     } catch (error) {
       console.error("Form submission error:", error)
